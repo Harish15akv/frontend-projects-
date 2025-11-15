@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry ❤️</title>
+    <style>
+        body {
+            background: #000;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 150px;
+        }
+
+        #playBtn {
+            padding: 15px 30px;
+            background: crimson;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #playBtn:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>I am sorry ❤️</h1>
+        <p>Press the button… this song is for you.</p>
+
+        <button id="playBtn">▶ Play Song</button>
+    </div>
+
+    <!-- Hidden audio -->
+    <audio id="bgMusic">
+        <source src="OorumBloodUnplugged.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const playBtn = document.getElementById("playBtn");
+        const bgMusic = document.getElementById("bgMusic");
+        let isPlaying = false;
+
+        playBtn.addEventListener("click", () => {
+            if (!isPlaying) {
+                bgMusic.play();
+                playBtn.innerText = "⏸ Pause Song";
+                isPlaying = true;
+            } else {
+                bgMusic.pause();
+                playBtn.innerText = "▶ Play Song";
+                isPlaying = false;
+            }
+        });
+    </script>
+
+</body>
+</html>
